@@ -2,111 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>React Ateliers – Executions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Ateliers ReactJS</title>
 
   <style>
-    :root {
-      --accent: #4fc3f7;       /* Professional React blue */
-      --accent-dark: #039be5;
-      --text-dark: #1e293b;
-      --text-muted: #64748b;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--text-dark);
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f6fa;
+      color: #2f3640;
       margin: 0;
-      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* ---------- HEADER ---------- */
     header {
-      background: var(--card-bg);
-      border-bottom: 1px solid var(--border);
-      padding: 40px 0;
+      background: #273c75;
+      color: white;
+      width: 100%;
       text-align: center;
+      padding: 25px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     header h1 {
       margin: 0;
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--text-dark);
+      font-size: 28px;
     }
 
     header p {
-      color: var(--text-muted);
-      margin-top: 8px;
-      font-size: 15px;
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: #dcdde1;
     }
 
-    /* ---------- MAIN ---------- */
     main {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 800px;
+      width: 90%;
+      margin-top: 30px;
     }
 
     .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 22px;
-      margin-bottom: 22px;
-      transition: 0.25s ease;
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
     }
 
     .card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transform: translateY(-3px);
     }
 
     .card h2 {
-      margin: 0;
+      margin: 0 0 10px 0;
+      color: #192a56;
       font-size: 20px;
-      font-weight: 600;
     }
 
     .card p {
-      margin: 8px 0 18px;
-      color: var(--text-muted);
-      font-size: 15px;
+      margin: 0 0 15px 0;
+      color: #718093;
+      font-size: 14px;
     }
 
     a {
       display: inline-block;
-      background: var(--accent);
-      color: #fff;
+      background: #0097e6;
+      color: white;
       padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
+      border-radius: 8px;
       text-decoration: none;
+      font-weight: 500;
       transition: 0.2s ease;
-      font-size: 14px;
     }
 
     a:hover {
-      background: var(--accent-dark);
+      background: #40739e;
     }
 
-    /* ---------- FOOTER ---------- */
     footer {
-      margin-top: 60px;
-      padding-bottom: 30px;
-      text-align: center;
-      color: var(--text-muted);
+      margin-top: 40px;
+      color: #888;
       font-size: 14px;
+      padding: 20px;
+      text-align: center;
     }
   </style>
 </head>
-
 <body>
 
   <header>
-    <h1>Les Ateliers ReactJS</h1>
+    <h1>📘Les Ateliers ReactJS</h1>
     <p>Launch React workshops and view their results</p>
   </header>
 
