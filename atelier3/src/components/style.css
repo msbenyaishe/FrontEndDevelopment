@@ -1,0 +1,61 @@
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Page spacing */
+.app-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Title */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Form layout */
+.profil-form {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.profil-form input {
+  min-width: 160px;
+}
+
+/* Profile cards */
+.profile-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card image */
+.profile-card img {
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Delete button */
+.btn-delete {
+  margin-top: 10px;
+}

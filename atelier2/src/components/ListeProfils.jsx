@@ -5,7 +5,7 @@ function ListeProfiles() {
         {
             nom: 'Alice Martin',
             age: 25,
-            profession: 'Développeuse Web',
+            profession: 'Développeur Web',
             ville: 'Paris',
             image: './images/male.png'
         },
