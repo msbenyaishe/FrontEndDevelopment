@@ -1,4 +1,3 @@
-// App.jsx
 import { useEffect, useState } from "react";
 import Composant1 from "./components/composant1";
 import Composant3 from "./components/Composant3";
