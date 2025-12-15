@@ -1,4 +1,3 @@
-// Composant3.jsx
 import { useState } from "react";
 
 function Composant3({ salaries }) {
