@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { motion } from "framer-motion";
 import { AppContext } from "../context/AppContext";
 import heroImage from "../assets/image.png"; // Import the image via JS for Vite
 
@@ -27,28 +26,10 @@ export default function Home() {
         position: "relative",
       }}
     >
-      <motion.div
-        className="hero-content"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          {text.welcome}
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-        >
-          {text.subtext}
-        </motion.p>
-      </motion.div>
+      <div className="hero-content">
+        <h1>{text.welcome}</h1>
+        <p>{text.subtext}</p>
+      </div>
     </div>
   );
 }
