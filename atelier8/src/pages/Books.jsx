@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 function Books() {
     const books = [
-    { id: 1, title: 'React Basics', genre: 'technology' },
-    { id: 2, title: 'JavaScript Essentials', genre: 'technology' },
-    { id: 3, title: 'Cooking Made Easy', genre: 'lifestyle' }
-  ];
+        { id: 1, title: 'React Basics', genre: 'technology' },
+        { id: 2, title: 'JavaScript Essentials', genre: 'technology' },
+        { id: 3, title: 'Cooking Made Easy', genre: 'lifestyle' }
+    ];
 
   return (
     <div className="container-fluid mt-4">

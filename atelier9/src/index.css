@@ -1,0 +1,403 @@
+/* ======================================================
+   GLOBAL RESET & TYPOGRAPHY
+====================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.65;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  overflow: hidden;
+}
+
+/* ======================================================
+   DESIGN TOKENS (THEME SYSTEM)
+====================================================== */
+:root {
+  --primary-color: #007bff;
+  --accent-color: #28a745;
+
+  --bg-color: #ffffff;
+  --text-color: #2b2b2b;
+  --muted-text: #6c757d;
+
+  --navbar-bg: rgba(255, 255, 255, 0.96);
+  --navbar-height: 78px;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f1115;
+  --text-color: #eaeaea;
+  --muted-text: #a0a0a0;
+
+  --navbar-bg: rgba(18, 18, 18, 0.96);
+
+  --shadow-sm: 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.55);
+}
+
+/* ======================================================
+   NAVBAR — ADVANCED & RESPONSIVE
+====================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  height: var(--navbar-height);
+  padding-inline: 3rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  background-color: var(--navbar-bg);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Brand */
+.navbar h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+}
+
+/* Links */
+.navbar .links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.navbar .links a {
+  position: relative;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-color);
+  letter-spacing: 0.3px;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .links a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.navbar .links a:hover {
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.navbar .links a:hover::after {
+  width: 100%;
+}
+
+/* Actions */
+.navbar .actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* ======================================================
+   LANGUAGE SWITCH — PILL STYLE
+====================================================== */
+.lang-switch {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-switch button {
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+[data-theme="dark"] .lang-switch button {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.lang-switch button:hover {
+  background-color: rgba(0, 123, 255, 0.12);
+}
+
+.lang-switch button.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+}
+
+/* ======================================================
+   THEME TOGGLE — SWITCH STYLE
+====================================================== */
+.navbar .actions button {
+  width: 46px;
+  height: 24px;
+  border-radius: 20px;
+  background-color: #ccc;
+  position: relative;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .actions button::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+[data-theme="dark"] .navbar .actions button {
+  background-color: var(--primary-color);
+}
+
+[data-theme="dark"] .navbar .actions button::before {
+  transform: translateX(22px);
+}
+
+/* ======================================================
+   HERO SECTION — SHARP & IMMERSIVE
+====================================================== */
+.hero {
+  background-image: url('../assets/image.png'); /* relative to build output */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.18),
+    rgba(40, 167, 69, 0.18)
+  );
+}
+
+/* Dark mode hero overlay fix */
+[data-theme="dark"] .hero::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 123, 255, 0.28),
+    rgba(40, 167, 69, 0.28)
+  );
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 2.5rem;
+  color: #ffffff;
+  animation: heroFade 1s ease-out;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+}
+
+.hero p {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  opacity: 0.95;
+}
+
+/* ======================================================
+   PAGE CONTENT
+====================================================== */
+.page {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: calc(var(--navbar-height) + 2rem) 2rem 3rem;
+  scroll-margin-top: calc(var(--navbar-height) + 20px);
+  min-height: 100vh;
+}
+
+.page h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.page p {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: var(--muted-text);
+  margin-bottom: 1.4rem;
+}
+
+/* Language button */
+.lang-btn {
+  min-width: 42px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+[data-theme="dark"] .lang-btn {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Language select */
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: transparent;
+  border: none;
+
+  padding: 6px 10px;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  outline: none;
+  color: var(--text-color);
+}
+
+.lang-select:hover,
+.lang-select:focus {
+  opacity: 0.8;
+}
+
+/* Fix dropdown in dark mode */
+[data-theme="dark"] option {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================================
+   RESPONSIVE — MOBILE-FIRST DESIGN
+====================================================== */
+@media (max-width: 768px) {
+
+  :root {
+    --navbar-height: 140px;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 1.4rem 1.6rem;
+    grid-template-columns: 1fr auto;
+    row-gap: 1.4rem;
+  }
+
+  .navbar .links {
+    grid-column: 1 / -1;
+    justify-content: space-evenly;
+    gap: 1.6rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  [data-theme="dark"] .navbar .links {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .page {
+    padding: calc(var(--navbar-height) + 1.5rem) 1.5rem 2rem;
+  }
+
+  .page h1 {
+    font-size: 2rem;
+  }
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ======================================================
+   FIX: PREVENT NAVBAR OVERLAP
+====================================================== */
+.app-content {
+  width: 100%;
+  padding-top: var(--navbar-height);
+}
+
+/* ======================================================
+   RTL SUPPORT
+====================================================== */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] .navbar .links a::after {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
