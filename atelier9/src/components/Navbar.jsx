@@ -39,7 +39,7 @@ export default function Navbar() {
             </div>
 
             <div className="actions">
-                {/* Language selector (unchanged) */}
+                
                 <select className="lang-select"
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
@@ -51,7 +51,6 @@ export default function Navbar() {
                     ))}
                 </select>
 
-                {/* Theme switch button */}
                 <motion.button
                     className="theme-switch"
                     onClick={toggleTheme}

@@ -1,0 +1,131 @@
+/* ----------------------------------------------------
+   GLOBAL
+---------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Poppins';
+}
+
+body {
+  background: #f7f7f9;
+  color: #1b1c1f;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+/* ----------------------------------------------------
+   APP LAYOUT
+---------------------------------------------------- */
+.app-shell {
+  width: 100%;
+  max-width: 580px;
+  padding: 20px 20px 70px;
+}
+
+/* ----------------------------------------------------
+   HEADER
+---------------------------------------------------- */
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+}
+
+.tagline {
+  margin-top: 4px;
+  color: #6b6d70;
+  font-size: 15px;
+}
+
+/* ----------------------------------------------------
+   CARDS
+---------------------------------------------------- */
+.card {
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e5e5e8;
+  padding: 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+}
+
+/* ----------------------------------------------------
+   INPUT ROWS
+---------------------------------------------------- */
+.add-task .row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ----------------------------------------------------
+   INPUT FIELDS
+---------------------------------------------------- */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d5d5dd;
+  background: #fafafa;
+}
+
+/* ----------------------------------------------------
+   BUTTONS
+---------------------------------------------------- */
+.btn {
+  width: 100%;
+  padding: 13px;
+  background: #4b8cff;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.small {
+  width: auto;
+  padding: 10px 16px;
+}
+
+.btn.danger {
+  background: #e85c5c;
+}
+
+/* ----------------------------------------------------
+   TASK ITEMS
+---------------------------------------------------- */
+.task-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e6e6ea;
+  margin-top: 16px
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
