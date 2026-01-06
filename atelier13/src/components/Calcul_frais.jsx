@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { ajouterSimulation } from "../assets/redux/simulationSlice";
+import { ajouterSimulation } from "../redux/simulationSlice";
 
 export default function CalculFrais() {
   const [montant, setMontant] = useState("");
